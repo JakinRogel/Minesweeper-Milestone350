@@ -87,8 +87,9 @@ The Minesweeper Milestone Project is a web app developed with Visual Studio Code
 
 ## Contributors
 
-- John Doe (@johndoe)
-- Jane Smith (@janesmith)
+- Jakin Rogel (@JakinRogel)
+- Tony Brown (@)
+- Miguel Gallegos (@)
 
 ## License
 
