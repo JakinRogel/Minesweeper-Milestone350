@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Minesweeper-Milestone350/1.0.0": {
+        "runtime": {
+          "Minesweeper-Milestone350.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Minesweeper-Milestone350/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
