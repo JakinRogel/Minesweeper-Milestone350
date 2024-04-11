@@ -1,10 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\",
+  "WorkspaceRootPath": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\jakin\\onedrive\\other\\documents\\github\\minesweeper-milestone350\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\tony\\desktop\\clc project\\minesweeper-milestone350\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\tony\\desktop\\clc project\\minesweeper-milestone350\\models\\userregistrationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:models\\userregistrationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\tony\\desktop\\clc project\\minesweeper-milestone350\\views\\home\\registrationpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:views\\home\\registrationpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\tony\\desktop\\clc project\\minesweeper-milestone350\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,21 +26,64 @@
       "DocumentGroups": [
         {
           "DockedHeight": 323,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-11T15:11:05.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegistrationPage.cshtml",
+              "DocumentMoniker": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Views\\Home\\RegistrationPage.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\RegistrationPage.cshtml",
+              "ToolTip": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Views\\Home\\RegistrationPage.cshtml",
+              "RelativeToolTip": "Views\\Home\\RegistrationPage.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-11T15:05:28.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserRegistrationModel.cs",
+              "DocumentMoniker": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Models\\UserRegistrationModel.cs",
+              "RelativeDocumentMoniker": "Models\\UserRegistrationModel.cs",
+              "ToolTip": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Models\\UserRegistrationModel.cs",
+              "RelativeToolTip": "Models\\UserRegistrationModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T14:53:01.438Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwA8AAAAkAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBsAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-11T03:42:16.635Z",
               "EditorCaption": ""
