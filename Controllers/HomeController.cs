@@ -22,11 +22,37 @@ namespace Minesweeper_Milestone350.Controllers
         {
             return View();
         }
-       
+
+        [HttpGet] 
         public IActionResult RegistrationPage()
         {
             return View();
         }
+       
+        [HttpPost] 
+        public IActionResult CreateUser(UserRegistrationModel model)
+        {
+            // Check if the user already exists (for demonstration purposes, let's assume the user exists if the username matches "existingUser")
+            if (model.userName == "existingUser")
+            {
+                ModelState.AddModelError(string.Empty, "User already exists.");
+                return View("ExistingUser", model);
+            }
+
+            if (ModelState.IsValid)
+            {
+                // Here, you can process the registration logic
+                // For example, save the user to a database
+                // For demonstration, let's just return a success message
+                return View("ShowUserDetails", model);
+            }
+            else
+            {
+                // If the model state is not valid, return the registration page with validation errors
+                return View("RegistrationPage", model);
+            }
+        }
+      
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

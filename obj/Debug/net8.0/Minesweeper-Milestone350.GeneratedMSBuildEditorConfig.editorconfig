@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Tony\Desktop\CLC Project\Minesweeper-Milestone350
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Tony/Desktop/CLC Project/Minesweeper-Milestone350/Views/Home/ExistingUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFeGlzdGluZ1VzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Tony/Desktop/CLC Project/Minesweeper-Milestone350/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Tony/Desktop/CLC Project/Minesweeper-Milestone350/Views/Home/RegistrationPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3RyYXRpb25QYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tony/Desktop/CLC Project/Minesweeper-Milestone350/Views/Home/ShowUserDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93VXNlckRldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Tony/Desktop/CLC Project/Minesweeper-Milestone350/Views/Shared/Error.cshtml]
