@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Minesweeper_Milestone350.Models;
+using RegisterAndLoginApp.Services;
 using System.Diagnostics;
 
 namespace Minesweeper_Milestone350.Controllers
@@ -7,10 +8,12 @@ namespace Minesweeper_Milestone350.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly SecurityDAO securityDAO;
 
         public HomeController(ILogger<HomeController> logger)
         {
-            _logger = logger; 
+            _logger = logger;
+            securityDAO = new SecurityDAO();
         }
 
         public IActionResult Index()
@@ -43,6 +46,9 @@ namespace Minesweeper_Milestone350.Controllers
             {
                 // Here, you can process the registration logic
                 // For example, save the user to a database
+                // Call the CreateUser method in SecurityDAO to save the user to the database
+                securityDAO.CreateUser(model);
+
                 // For demonstration, let's just return a success message
                 return View("ShowUserDetails", model);
             }

@@ -9,7 +9,7 @@ namespace Minesweeper_Milestone350.Models
         [DisplayName("Please enter your first name.")]
         public string firstName { get; set; }
         [Required]
-        [DisplayName("Please enter your first name.")]
+        [DisplayName("Please enter your last name.")]
         public string lastName { get; set; }
         [Required]
         [DisplayName("Please enter your gender.")]
