@@ -81,6 +81,35 @@ namespace RegisterAndLoginApp.Services
         {
             bool existingUser = false;
 
+            string sqlStatement = "SELECT COUNT(*) FROM dbo.users WHERE username = @username";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlCommand command = new SqlCommand(sqlStatement, connection);
+                    command.Parameters.AddWithValue("@username", username);
+
+                    connection.Open();
+                    int count = (int)command.ExecuteScalar();
+                    existingUser = count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception appropriately, e.g., log it
+                Console.WriteLine("An error occurred while checking for user existence: " + ex.Message);
+            }
+
+            return existingUser;
+        }
+
+
+        /* TONY ITERATION
+        public bool FindUserByUsername(string username)
+        {
+            bool existingUser = false;
+
             string sqlStatement = "SELECT * FROM dbo.users WHERE username = @username";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -108,7 +137,7 @@ namespace RegisterAndLoginApp.Services
             return existingUser;
         }
 
-
+        */
 
     }
 }

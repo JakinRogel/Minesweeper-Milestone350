@@ -36,8 +36,8 @@ namespace Minesweeper_Milestone350.Controllers
         public IActionResult CreateUser(UserRegistrationModel model)
         {
             // Check if the user already exists by username
-            if(model.userName == "existingUser")
-            //if (securityDAO.FindUserByUsername(model.userName))
+            //if(model.userName == "existingUser")
+            if (securityDAO.FindUserByUsername(model.userName))
             {
                 ModelState.AddModelError(string.Empty, "User already exists.");
                 return View("ExistingUser", model);
