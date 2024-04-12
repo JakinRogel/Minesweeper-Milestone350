@@ -76,6 +76,39 @@ namespace RegisterAndLoginApp.Services
                 }
             }
         }
+        // attempting to get search for exsisting user based off database search
+        public bool FindUserByUsername(string username)
+        {
+            bool existingUser = false;
+
+            string sqlStatement = "SELECT * FROM dbo.users WHERE username = @username";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(sqlStatement, connection);
+                command.Parameters.AddWithValue("@USERNAME", username);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    // If the reader has rows, it means a user with the provided username already exists
+                    if (reader.HasRows)
+                    {
+                        existingUser = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            return existingUser;
+        }
+
+
 
     }
 }

@@ -31,12 +31,13 @@ namespace Minesweeper_Milestone350.Controllers
         {
             return View();
         }
-       
-        [HttpPost] 
+
+        [HttpPost]
         public IActionResult CreateUser(UserRegistrationModel model)
         {
-            // Check if the user already exists (for demonstration purposes, let's assume the user exists if the username matches "existingUser")
-            if (model.userName == "existingUser")
+            // Check if the user already exists by username
+            if(model.userName == "existingUser")
+            //if (securityDAO.FindUserByUsername(model.userName))
             {
                 ModelState.AddModelError(string.Empty, "User already exists.");
                 return View("ExistingUser", model);
@@ -58,7 +59,7 @@ namespace Minesweeper_Milestone350.Controllers
                 return View("RegistrationPage", model);
             }
         }
-      
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
