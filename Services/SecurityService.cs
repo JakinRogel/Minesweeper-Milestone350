@@ -6,7 +6,7 @@ namespace RegisterAndLoginApp.Services
     {
         SecurityDAO securityDAO = new SecurityDAO();
 
-        public bool IsValid(UserRegistrationModel user)
+        public bool IsValid(UserLoginModel user)
         {
             return securityDAO.FindUserByNameAndPassword(user);
         }

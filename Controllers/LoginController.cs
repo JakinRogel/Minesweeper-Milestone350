@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Minesweeper_Milestone350.Models;
+using RegisterAndLoginApp.Services;
 
 namespace Minesweeper_Milestone350.Controllers
 {
@@ -12,13 +13,14 @@ namespace Minesweeper_Milestone350.Controllers
 
         public IActionResult ProcessLogin(UserLoginModel user) 
         {
-            bool success = true;
-            if(success)
+            SecurityService securityService = new SecurityService();
+
+            if(securityService.IsValid(user))
             {
                 return View("LoginSuccess", user);
             } else
             {
-                return View("LoginFialure", user);
+                return View("LoginFailure", user);
             }
         }
     }
