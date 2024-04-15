@@ -12,7 +12,7 @@ namespace RegisterAndLoginApp.Services
 
 
 
-        public bool FindUserByNameAndPassword(UserRegistrationModel user)
+        public bool FindUserByNameAndPassword(UserLoginModel user)
         {
             //assume nothing is found
             bool success = false;
@@ -25,8 +25,8 @@ namespace RegisterAndLoginApp.Services
                 SqlCommand command = new SqlCommand(sqlStatement, connection);
 
                 //define the values of the two placeholders in the sqlStatement string
-                command.Parameters.Add("@USERNAME", System.Data.SqlDbType.VarChar, 50).Value = user.userName;
-                command.Parameters.Add("@PASSWORD", System.Data.SqlDbType.VarChar, 50).Value = user.password;
+                command.Parameters.Add("@USERNAME", System.Data.SqlDbType.VarChar, 50).Value = user.UserName;
+                command.Parameters.Add("@PASSWORD", System.Data.SqlDbType.VarChar, 50).Value = user.Password;
 
                 try
                 {
