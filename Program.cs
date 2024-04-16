@@ -1,7 +1,12 @@
+
+
+using Minesweeper_Milestone350.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<GameService>(); // Register GameService as a scoped service
 
 var app = builder.Build();
 

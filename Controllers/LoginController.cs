@@ -17,11 +17,13 @@ namespace Minesweeper_Milestone350.Controllers
 
             if(securityService.IsValid(user))
             {
-                return View("LoginSuccess", user);
+                return RedirectToAction("Index", "Game");
             } else
             {
                 return View("LoginFailure", user);
             }
+            
         }
+
     }
 }

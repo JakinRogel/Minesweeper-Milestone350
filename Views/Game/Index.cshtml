@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Minesweeper_Milestone350.Models.ButtonModel>
+
+<style>
+    .game-button {
+        width: 85px;
+        border: none;
+    }
+
+    .game-button-image {
+        width: 70px;
+    }
+
+    .button-zone {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .line-break {
+        flex-basis: 100%;
+        height: 0;
+    }
+
+    .button-label {
+        font-size: 8px;
+        text-align: center;
+    }
+</style>
+@{
+    string[] imageNames = { "bomb_image.jpg", "cream background.jpg", "flag_image.png", "light blue background.jpg" };
+
+}
+<form>
+    <div class="button-zone">
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            if (i % 5 == 0) // Add i != 0 to prevent a line break before the first image
+            {
+                <div class="line-break"></div>
+            }
+            <button class="game-button" type="submit" value="@i" name="buttonNumber" asp-controller="Game" asp-action="HandleButtonClick">
+                <!-- Corrected asp-controller value -->
+                <img class="game-button-image" src="~/img/@imageNames[Model.ElementAt(i).ButtonState]" />
+                <div class="button-label">
+                    @Model.ElementAt(i).Id
+                </div>
+            </button>
+        }
+    </div>
+    @if (!string.IsNullOrEmpty(ViewData["WinMessage"] as string))
+    {
+        <div class="win-message">
+            @ViewData["WinMessage"]
+        </div>
+    }
+</form>
+
+
+
+
