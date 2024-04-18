@@ -1,12 +1,22 @@
-
-
-using Minesweeper_Milestone350.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<GameService>(); // Register GameService as a scoped service
+builder.Services.AddHttpContextAccessor(); // Add HttpContextAccessor
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session idle timeout to 30 minutes
+});
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
+    {
+        options.LoginPath = "/Login";
+        options.AccessDeniedPath = "/AccessDenied";
+
+    });
+
 
 var app = builder.Build();
 
@@ -14,7 +24,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -23,6 +32,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseSession();
+
+// Use authentication middleware
+app.UseAuthentication();
+
+// Use authorization middleware
 app.UseAuthorization();
 
 app.MapControllerRoute(

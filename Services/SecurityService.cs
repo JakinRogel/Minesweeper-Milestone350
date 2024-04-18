@@ -8,8 +8,7 @@ namespace RegisterAndLoginApp.Services
 
         public bool IsValid(UserLoginModel user)
         {
-            //return securityDAO.FindUserByNameAndPassword(user);
-            return true;
+            return securityDAO.FindUserByNameAndPassword(user);
         }
     }
 }

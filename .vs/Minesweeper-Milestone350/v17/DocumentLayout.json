@@ -1,36 +1,15 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\tony\\desktop\\clc project\\minesweeper-milestone350\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\tony\\desktop\\clc project\\minesweeper-milestone350\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\tony\\desktop\\clc project\\minesweeper-milestone350\\views\\game\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:views\\game\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\tony\\desktop\\clc project\\minesweeper-milestone350\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\tony\\desktop\\clc project\\minesweeper-milestone350\\models\\buttonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:models\\buttonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 323,
-          "SelectedChildIndex": 3,
+          "DockedHeight": 235,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,71 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T21:59:53.001Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameService.cs",
-              "DocumentMoniker": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Services\\GameService.cs",
-              "RelativeDocumentMoniker": "Services\\GameService.cs",
-              "ToolTip": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Services\\GameService.cs*",
-              "RelativeToolTip": "Services\\GameService.cs*",
-              "ViewState": "AQIAADcAAAAAAAAAAADwv1UAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T21:58:25.942Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GameController.cs",
-              "DocumentMoniker": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Controllers\\GameController.cs",
-              "RelativeDocumentMoniker": "Controllers\\GameController.cs",
-              "ToolTip": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Controllers\\GameController.cs",
-              "RelativeToolTip": "Controllers\\GameController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T17:23:10.643Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Views\\Game\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Game\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Views\\Game\\Index.cshtml",
-              "RelativeToolTip": "Views\\Game\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-16T17:32:46.528Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ButtonModel.cs",
-              "DocumentMoniker": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Models\\ButtonModel.cs",
-              "RelativeDocumentMoniker": "Models\\ButtonModel.cs",
-              "ToolTip": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Models\\ButtonModel.cs",
-              "RelativeToolTip": "Models\\ButtonModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T17:17:18.316Z",
-              "EditorCaption": ""
             }
           ]
         }
