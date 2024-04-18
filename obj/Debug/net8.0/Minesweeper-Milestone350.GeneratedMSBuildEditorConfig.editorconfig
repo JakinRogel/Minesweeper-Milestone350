@@ -26,6 +26,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Jakin\OneDrive\Other\Documents\GitHub\Minesweeper-Milestone350
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Jakin/OneDrive/Other/Documents/GitHub/Minesweeper-Milestone350/Views/Game/GameOver.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVxHYW1lT3Zlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jakin/OneDrive/Other/Documents/GitHub/Minesweeper-Milestone350/Views/Game/GameWon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVxHYW1lV29uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jakin/OneDrive/Other/Documents/GitHub/Minesweeper-Milestone350/Views/Game/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Jakin/OneDrive/Other/Documents/GitHub/Minesweeper-Milestone350/Views/Home/ExistingUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFeGlzdGluZ1VzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Jakin/OneDrive/Other/Documents/GitHub/Minesweeper-Milestone350/Views/Home/ShowUserDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93VXNlckRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jakin/OneDrive/Other/Documents/GitHub/Minesweeper-Milestone350/Views/Login/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQWNjZXNzRGVuaWVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Jakin/OneDrive/Other/Documents/GitHub/Minesweeper-Milestone350/Views/Login/Index.cshtml]

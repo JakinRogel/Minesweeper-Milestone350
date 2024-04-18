@@ -13,6 +13,26 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\wwwroot\\image\\mine 50.png",
+      "PackagePath": "staticwebassets\\image\\mine 50.png"
+    },
+    {
+      "Id": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\wwwroot\\img\\bomb_image.jpg",
+      "PackagePath": "staticwebassets\\img\\bomb_image.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\wwwroot\\img\\cream background.jpg",
+      "PackagePath": "staticwebassets\\img\\cream background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\wwwroot\\img\\flag_image.png",
+      "PackagePath": "staticwebassets\\img\\flag_image.png"
+    },
+    {
+      "Id": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\wwwroot\\img\\light blue background.jpg",
+      "PackagePath": "staticwebassets\\img\\light blue background.jpg"
+    },
+    {
       "Id": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
