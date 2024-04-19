@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Minesweeper-Milestone350")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4954ce486ac3db2a8c4c0df872b53c6f68028c17")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+283ddfe584ee1a1ea4d4bb7863921c0e8886fa23")]
 [assembly: System.Reflection.AssemblyProductAttribute("Minesweeper-Milestone350")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Minesweeper-Milestone350")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
