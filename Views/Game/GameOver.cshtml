@@ -1,0 +1,13 @@
+﻿@model Minesweeper_Milestone350.Models.Board
+
+@{
+    ViewBag.Title = "Game Over";
+}
+
+<h2>GAME OVER <img src="/image/mine 50.png" alt="Mine" /></h2>
+<p>You hit a bomb.</p>
+
+<form asp-controller="Game" asp-action="Index" method="get">
+    <button type="submit">Restart Game</button>
+</form>
+
