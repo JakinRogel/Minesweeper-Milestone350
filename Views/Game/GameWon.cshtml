@@ -1,0 +1,12 @@
+﻿@model Minesweeper_Milestone350.Models.Board
+
+@{
+    ViewBag.Title = "Game Won";
+}
+
+<h2>Congratulations!</h2>
+<p>You have successfully cleared the board!</p>
+
+<form asp-controller="Game" asp-action="Index" method="get">
+    <button type="submit">Play Again</button>
+</form>
