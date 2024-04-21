@@ -4,9 +4,19 @@
     ViewBag.Title = "Game Won";
 }
 
-<h2>Congratulations!</h2>
-<p>You have successfully cleared the board!</p>
+<style>
+    .game-over-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
 
-<form asp-controller="Game" asp-action="Index" method="get">
-    <button type="submit">Play Again</button>
-</form>
+<div class="game-over-message">
+    <h2>Congratulations!</h2>
+    <p>You have successfully cleared the board!</p>
+
+    <form asp-controller="Game" asp-action="Index" method="get">
+        <button type="submit">Play Again</button>
+    </form>
+</div>
