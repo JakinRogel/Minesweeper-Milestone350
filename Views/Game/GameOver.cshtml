@@ -4,10 +4,21 @@
     ViewBag.Title = "Game Over";
 }
 
-<h2>GAME OVER <img src="/image/mine 50.png" alt="Mine" /></h2>
-<p>You hit a bomb.</p>
+<style>
+    .game-over-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
 
-<form asp-controller="Game" asp-action="Index" method="get">
-    <button type="submit">Restart Game</button>
-</form>
+<div class="game-over-message">
+    <h2>GAME OVER <img src="/image/mine 50.png" alt="Mine" /></h2>
+    <p>You hit a bomb.</p>
+
+
+    <form asp-controller="Game" asp-action="Index" method="get">
+        <button type="submit">Restart Game</button>
+    </form>
+</div>
 
