@@ -19,7 +19,7 @@ namespace Minesweeper_Milestone350.Controllers
         public async Task<IActionResult> ProcessLogin(UserLoginModel user)
         {
             SecurityService securityService = new SecurityService();
-
+            
             if (securityService.IsValid(user))
             {
                 // Create claims for the authenticated user
