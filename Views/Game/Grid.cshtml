@@ -1,0 +1,32 @@
+﻿@model Minesweeper_Milestone350.Models.Cell[,]
+
+
+<div class="button-zone">
+    @for (int i = 0; i < Model.GetLength(0); i++)
+    {
+        for (int j = 0; j < Model.GetLength(1); j++)
+        {
+            var cell = Model[i, j];
+            <button class="cell-button @(cell.Visited ? "revealed" : "")"
+                    data-row="@cell.Row"
+                    data-col="@cell.Column"
+            @(cell.Visited ? "disabled" : "")>
+                <!-- Add content to the button based on cell state -->
+                @if (cell.Visited)
+                {
+                    @if (cell.IsMine)
+                    {
+                        <span class="mine">
+                            <img src="/image/mine 50.png" alt="Alternate Text" />
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="number">@cell.LiveNeighbors</span>
+                    }
+                }
+
+            </button>
+        }
+    }
+</div>

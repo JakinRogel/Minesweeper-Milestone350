@@ -14,10 +14,6 @@
         background-color: white;
     }
 
-    form {
-        height: 75px;
-    }
-
     .number {
         color: blue;
         font-size: 24px;
@@ -46,34 +42,20 @@
         gap: 2px; /* Adjust as needed */
         justify-content: center;
     }
-</style>
 
-<div class="button-zone">
-    @for (int i = 0; i < Model.GetLength(0); i++)
-    {
-        for (int j = 0; j < Model.GetLength(1); j++)
-        {
-            var cell = Model[i, j];
-            <form method="post" asp-controller="Game" asp-action="HandleButtonClick">
-                <input type="hidden" name="row" value="@cell.Row" />
-                <input type="hidden" name="col" value="@cell.Column" />
-                <button class="cell-button @(cell.Visited ? "revealed" : "")" type="submit" @(cell.Visited ? "disabled" : "")>
-                    <!-- Add content to the button based on cell state -->
-                    @if (cell.Visited)
-                    {
-                        @if (cell.IsMine)
-                        {
-                            <span class="mine">
-                                <img src="/image/mine 50.png" alt="Alternate Text" />   
-                                </span>
-                        }
-                        else
-                        {
-                            <span class="number">@cell.LiveNeighbors</span>
-                        }
-                    }
-                </button>
-            </form>
-        }
+    .gameInfo {
+        margin-bottom: 20px;
     }
-</div>
+
+
+    .timestamp {
+        position: absolute; /* Position the timestamp at the bottom */
+        bottom: 0;
+        color: black; /* Set text color to black */
+        font-size: 9px; /* Set font size to 9px */
+    }
+</style>
+</style>
+<button id="startGameButton">Start Game</button>
+<div id="gameOverOrWonContainer" class="gameInfo"></div>
+<div class="button-zone"></div>

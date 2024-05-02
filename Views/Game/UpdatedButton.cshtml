@@ -1,0 +1,27 @@
+﻿@model Minesweeper_Milestone350.Models.Cell
+
+
+
+<button class="cell-button @(Model.Visited ? "revealed" : "")" @(Model.Visited ? "disabled" : "")>
+    <!-- Add content to the button based on cell state -->
+    @if (Model.Visited)
+    {
+        @if (Model.IsMine)
+        {
+            <span class="mine">
+                <img src="/image/mine 50.png" alt="Alternate Text" />
+            </span>
+        }
+        else
+        {
+            <span class="number">@Model.LiveNeighbors</span>
+        }
+
+    <!-- Display the current timestamp using JavaScript -->
+    <span class="timestamp">@Model.TimeStamp</span>
+    }
+</button>
+
+
+
+
