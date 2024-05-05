@@ -1,138 +1,228 @@
 ﻿using Minesweeper_Milestone350.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 
 namespace Minesweeper_Milestone350.Services
 {
     public class GameService
     {
-        private static List<ButtonModel> buttons = new List<ButtonModel>();
-        private Random random = new Random();
-        private const int GRID_SIZE = 25;
-        private const int ROW_SIZE = 5; // Assuming a 5x5 grid
-        private string[] imageNames = { "bomb_image.jpg", "cream background.jpg", "flag_image.png", "light blue background.jpg" };
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public List<ButtonModel> InitializeButtons()
+        public GameService(IHttpContextAccessor httpContextAccessor)
         {
-            buttons = new List<ButtonModel>();
-            for (int i = 0; i < GRID_SIZE; i++)
-            {
-                // Initialize all buttons with a hidden state
-                buttons.Add(new ButtonModel(i, Array.IndexOf(imageNames, "cream background.jpg")));
-            }
-            return buttons;
+            _httpContextAccessor = httpContextAccessor;
         }
 
-        public void HandleButtonClick(List<ButtonModel> buttons, int buttonIndex)
+        public Board InitializeBoard()
         {
-            ButtonModel button = buttons.ElementAt(buttonIndex);
-
-            // Place bombs after the first button click to ensure bombs start hidden
-            if (buttons.All(btn => btn.ButtonState == Array.IndexOf(imageNames, "cream background.jpg")))
+            var savedBoardJson = _httpContextAccessor.HttpContext.Session.GetString("boardState");
+            Board board;
+            if (!string.IsNullOrEmpty(savedBoardJson))
             {
-                PlaceBombs(buttonIndex);
-                RecursiveReveal(buttonIndex);
+                board = new Board(10); // Initialize an empty board
+                board.Grid = DeserializeBoard(savedBoardJson); // Populate the board's Grid property
             }
             else
             {
-                // If the button is a bomb, end the game
-                if (button.ButtonState == Array.IndexOf(imageNames, "bomb_image.jpg"))
+                board = new Board(10);
+                SetDifficulty(board, 1);
+                CalculateLiveNeighbors(board);
+
+                // Store the new board state in session
+                _httpContextAccessor.HttpContext.Session.SetString("boardState", SerializeBoard(board.Grid));
+            }
+            return board;
+        }
+
+        public string SerializeBoard(Cell[,] board)
+        {
+            var cellList = new List<Cell>();
+
+            for (int i = 0; i < board.GetLength(0); i++)
+            {
+                for (int j = 0; j < board.GetLength(1); j++)
                 {
-                    // Game over, reveal all bombs
-                    foreach (var btn in buttons)
+                    cellList.Add(board[i, j]);
+                }
+            }
+
+            return JsonSerializer.Serialize(cellList);
+        }
+
+        public Cell[,] DeserializeBoard(string json)
+        {
+            var cellList = JsonSerializer.Deserialize<List<Cell>>(json);
+
+            var rows = (int)Math.Sqrt(cellList.Count);
+            var cols = rows; // Assuming it's a square grid
+
+            var board = new Cell[rows, cols];
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    board[i, j] = cellList[i * rows + j];
+                }
+            }
+
+            return board;
+        }
+
+
+
+        public void HandleButtonClick(Board board, int row, int col)
+            {
+                // Check if the clicked cell is a bomb
+                if (board.Grid[row, col].IsMine)
+                {
+                    // Player clicked on a bomb, game over
+                    return;
+                }
+
+                // Update the clicked cell
+                if (!board.Grid[row, col].Visited)
+                {
+                    FloodFill(board, row, col); // Perform flood fill algorithm
+                }
+
+            // Store the updated board state in session
+            _httpContextAccessor.HttpContext.Session.SetString("boardState", SerializeBoard(board.Grid));
+
+        }
+
+            public void CalculateLiveNeighbors(Board board)
+        {
+            for (int row = 0; row < board.Size; row++)
+            {
+                for (int col = 0; col < board.Size; col++)
+                {
+                    if (board.Grid[row, col].IsMine)
                     {
-                        if (btn.ButtonState == Array.IndexOf(imageNames, "bomb_image.jpg"))
+                        board.Grid[row, col].LiveNeighbors = 9;
+
+                        for (int i = -1; i <= 1; i++)
                         {
-                            // Reveal the bomb
-                            btn.ButtonState = Array.IndexOf(imageNames, "bomb_image.jpg");
+                            for (int j = -1; j <= 1; j++)
+                            {
+                                int neighborRow = row + i;
+                                int neighborColumn = col + j;
+
+                                if (IsValidNeighbor(neighborRow, neighborColumn, board.Size))
+                                {
+                                    if (!board.Grid[neighborRow, neighborColumn].IsMine)
+                                    {
+                                        board.Grid[neighborRow, neighborColumn].LiveNeighbors++;
+                                    }
+                                }
+                            }
                         }
                     }
-                    // No need to use ViewData, we'll handle this in the controller
-                }
-                else
-                {
-                    // Recursive reveal
-                    RecursiveReveal(buttonIndex);
                 }
             }
         }
 
-        void RecursiveReveal(int index)
+        private bool IsValidNeighbor(int row, int col, int size)
         {
-            // Base case: Stop if the index is out of bounds or if the button is already revealed
-            if (index < 0 || index >= GRID_SIZE || buttons[index].ButtonState != Array.IndexOf(imageNames, "cream background.jpg"))
+            return row >= 0 && row < size && col >= 0 && col < size;
+        }
+
+        public void FloodFill(Board board, int row, int col)
+        {
+            if (row < 0 || row >= board.Size || col < 0 || col >= board.Size || board.Grid[row, col].Visited)
+            {
                 return;
+            }
 
-            // Get the row and column of the index
-            int row = index / ROW_SIZE;
-            int col = index % ROW_SIZE;
+            board.Grid[row, col].Visited = true;
 
-            // Count adjacent bombs
-            int adjacentBombs = CountAdjacentBombs(row, col);
-
-            // Update button state
-            buttons[index].ButtonState = adjacentBombs;
-
-            // If no adjacent bombs, recursively reveal neighbors
-            if (adjacentBombs == 0)
+            if (board.Grid[row, col].LiveNeighbors == 0)
             {
-                RecursiveReveal(index - 1);         // Left
-                RecursiveReveal(index + 1);         // Right
-                RecursiveReveal(index - ROW_SIZE);  // Up
-                RecursiveReveal(index + ROW_SIZE);  // Down
+                FloodFill(board, row - 1, col);
+                FloodFill(board, row + 1, col);
+                FloodFill(board, row, col - 1);
+                FloodFill(board, row, col + 1);
+                FloodFill(board, row - 1, col - 1);
+                FloodFill(board, row - 1, col + 1);
+                FloodFill(board, row + 1, col - 1);
+                FloodFill(board, row + 1, col + 1);
             }
         }
 
-
-        private int CountAdjacentBombs(int row, int col)
+        public bool CheckEndGame(Board board)
         {
-            int count = 0;
-            for (int i = Math.Max(0, row - 1); i <= Math.Min(row + 1, ROW_SIZE - 1); i++)
-            {
-                for (int j = Math.Max(0, col - 1); j <= Math.Min(col + 1, ROW_SIZE - 1); j++)
-                {
-                    if (buttons[i * ROW_SIZE + j].ButtonState == Array.IndexOf(imageNames, "bomb_image.jpg"))
-                        count++;
-                }
-            }
-            return count;
+            int visitedCells = board.Grid.Cast<Cell>().Count(cell => cell.Visited && !cell.IsMine);
+            int remainingInertCells = TotalInertCells(board);
+            return visitedCells != remainingInertCells;
         }
 
-        private void PlaceBombs(int firstClickIndex)
+        public int TotalInertCells(Board board)
         {
-            List<int> safeIndices = GetSafeIndices(firstClickIndex);
-            int bombsToPlace = 5; // Change as needed
-            while (bombsToPlace > 0)
+            return board.Grid.Cast<Cell>().Count(cell => !cell.IsMine);
+        }
+
+        public void SetDifficulty(Board board, double difficulty)
+        {
+            if (difficulty == 1)
             {
-                int randomIndex = safeIndices[random.Next(safeIndices.Count)];
-                if (buttons[randomIndex].ButtonState != Array.IndexOf(imageNames, "bomb_image.jpg"))
+                difficulty = 0.1;
+            }
+            else if (difficulty == 2)
+            {
+                difficulty = 0.5;
+            }
+            else if (difficulty == 3)
+            {
+                difficulty = 0.7;
+            }
+
+            SetupLiveBombs(board, difficulty);
+
+        }
+
+        // Update the Board class to randomly place mines on the board
+        public void SetupLiveBombs(Board board, double difficulty)
+        {
+            Random random = new Random();
+            int bombsToPlace = (int)Math.Round(board.Size * board.Size * difficulty);
+            int bombsPlaced = 0;
+
+            while (bombsPlaced < bombsToPlace)
+            {
+                int row = random.Next(0, board.Size);
+                int col = random.Next(0, board.Size);
+
+                if (!board.Grid[row, col].IsMine)
                 {
-                    buttons[randomIndex].ButtonState = Array.IndexOf(imageNames, "bomb_image.jpg");
-                    bombsToPlace--;
+                    board.Grid[row, col].IsMine = true;
+                    bombsPlaced++;
                 }
             }
         }
-
-        private List<int> GetSafeIndices(int firstClickIndex)
+        public bool GameLost(Board board, int clickedRow, int clickedCol)
         {
-            List<int> safeIndices = new List<int>();
-            for (int i = 0; i < GRID_SIZE; i++)
+            // Check if the clicked cell is a bomb
+            return board.Grid[clickedRow, clickedCol].IsMine;
+        }
+
+        internal Board updateBoard(Board board, int row, int col, string mine)
+        {
+            if (board.Grid[row, col].TimeStamp == null)
             {
-                if (i != firstClickIndex)
-                {
-                    // Exclude the clicked button and its adjacent buttons
-                    int row1 = i / ROW_SIZE;
-                    int col1 = i % ROW_SIZE;
-                    int row2 = firstClickIndex / ROW_SIZE;
-                    int col2 = firstClickIndex % ROW_SIZE;
-                    if (Math.Abs(row1 - row2) > 1 || Math.Abs(col1 - col2) > 1)
-                    {
-                        safeIndices.Add(i);
-                    }
-                }
+                board.Grid[row, col].TimeStamp = DateTime.Now.ToString("hh:mm:ss tt");
             }
-            return safeIndices;
+
+            if(mine == "true")
+            {
+                board.Grid[row,col].Visited = true;
+            }
+
+            // Store the new board state in session
+            _httpContextAccessor.HttpContext.Session.SetString("boardState", SerializeBoard(board.Grid));
+
+            return board;
         }
     }
 }
+
