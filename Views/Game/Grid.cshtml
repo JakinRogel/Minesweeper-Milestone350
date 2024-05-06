@@ -7,7 +7,7 @@
         for (int j = 0; j < Model.GetLength(1); j++)
         {
             var cell = Model[i, j];
-            <button class="cell-button @(cell.Visited ? "revealed" : "")"
+            <button class="cell-button @(cell.Visited ? "revealed" : "") @(cell.flagged ? "flagged" : "")"
                     data-row="@cell.Row"
                     data-col="@cell.Column"
             @(cell.Visited ? "disabled" : "")>

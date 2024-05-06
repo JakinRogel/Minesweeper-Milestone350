@@ -1,34 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\",
+  "WorkspaceRootPath": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\jakin\\onedrive\\other\\documents\\github\\minesweeper-milestone350\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\jakin\\onedrive\\other\\documents\\github\\minesweeper-milestone350\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\jakin\\onedrive\\other\\documents\\github\\minesweeper-milestone350\\views\\game\\updatedbutton.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:views\\game\\updatedbutton.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\jakin\\onedrive\\other\\documents\\github\\minesweeper-milestone350\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\migue\\documents\\github\\minesweeper-milestone350\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\jakin\\onedrive\\other\\documents\\github\\minesweeper-milestone350\\views\\game\\grid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\migue\\documents\\github\\minesweeper-milestone350\\views\\game\\updatedbutton.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:views\\game\\updatedbutton.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\migue\\documents\\github\\minesweeper-milestone350\\views\\game\\grid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:views\\game\\grid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\jakin\\onedrive\\other\\documents\\github\\minesweeper-milestone350\\models\\cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\migue\\documents\\github\\minesweeper-milestone350\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\migue\\documents\\github\\minesweeper-milestone350\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\migue\\documents\\github\\minesweeper-milestone350\\models\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:models\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\migue\\documents\\github\\minesweeper-milestone350\\models\\cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:models\\cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\jakin\\onedrive\\other\\documents\\github\\minesweeper-milestone350\\views\\game\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:views\\game\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\migue\\documents\\github\\minesweeper-milestone350\\views\\game\\gamewon.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:views\\game\\gamewon.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|c:\\users\\migue\\documents\\github\\minesweeper-milestone350\\views\\game\\gameover.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F484365D-109B-4CEB-BD5E-2069DD678412}|Minesweeper-Milestone350.csproj|solutionrelative:views\\game\\gameover.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,21 +45,98 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 367,
-          "SelectedChildIndex": 8,
+          "DockedHeight": 235,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Grid.cshtml",
+              "DocumentMoniker": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Views\\Game\\Grid.cshtml",
+              "RelativeDocumentMoniker": "Views\\Game\\Grid.cshtml",
+              "ToolTip": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Views\\Game\\Grid.cshtml",
+              "RelativeToolTip": "Views\\Game\\Grid.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-05T23:28:09.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "GameService.cs",
+              "DocumentMoniker": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Services\\GameService.cs",
+              "RelativeDocumentMoniker": "Services\\GameService.cs",
+              "ToolTip": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Services\\GameService.cs",
+              "RelativeToolTip": "Services\\GameService.cs",
+              "ViewState": "AQIAAMYAAAAAAAAAAAAiwNgAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T22:42:26.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameController.cs",
+              "DocumentMoniker": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Controllers\\GameController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GameController.cs",
+              "ToolTip": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Controllers\\GameController.cs",
+              "RelativeToolTip": "Controllers\\GameController.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAUwHAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T22:41:17.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "site.js",
-              "DocumentMoniker": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\wwwroot\\js\\site.js",
+              "DocumentMoniker": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
-              "ToolTip": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\wwwroot\\js\\site.js",
               "RelativeToolTip": "wwwroot\\js\\site.js",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAmwFcAAABmAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAA0wCQAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-04-30T20:53:19.777Z",
-              "IsPinned": true,
+              "WhenOpened": "2024-05-05T22:36:18.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UpdatedButton.cshtml",
+              "DocumentMoniker": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Views\\Game\\UpdatedButton.cshtml",
+              "RelativeDocumentMoniker": "Views\\Game\\UpdatedButton.cshtml",
+              "ToolTip": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Views\\Game\\UpdatedButton.cshtml",
+              "RelativeToolTip": "Views\\Game\\UpdatedButton.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-05T22:35:02.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Board.cs",
+              "DocumentMoniker": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Models\\Board.cs",
+              "RelativeDocumentMoniker": "Models\\Board.cs",
+              "ToolTip": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Models\\Board.cs",
+              "RelativeToolTip": "Models\\Board.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T22:43:17.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Cell.cs",
+              "DocumentMoniker": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Models\\Cell.cs",
+              "RelativeDocumentMoniker": "Models\\Cell.cs",
+              "ToolTip": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Models\\Cell.cs",
+              "RelativeToolTip": "Models\\Cell.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T22:43:24.444Z",
               "EditorCaption": ""
             },
             {
@@ -64,81 +149,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Cell.cs",
-              "DocumentMoniker": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\Models\\Cell.cs",
-              "RelativeDocumentMoniker": "Models\\Cell.cs",
-              "ToolTip": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\Models\\Cell.cs",
-              "RelativeToolTip": "Models\\Cell.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T00:25:41.813Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UpdatedButton.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\Views\\Game\\UpdatedButton.cshtml",
-              "RelativeDocumentMoniker": "Views\\Game\\UpdatedButton.cshtml",
-              "ToolTip": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\Views\\Game\\UpdatedButton.cshtml",
-              "RelativeToolTip": "Views\\Game\\UpdatedButton.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "DocumentIndex": 7,
+              "Title": "GameWon.cshtml",
+              "DocumentMoniker": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Views\\Game\\GameWon.cshtml",
+              "RelativeDocumentMoniker": "Views\\Game\\GameWon.cshtml",
+              "ToolTip": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Views\\Game\\GameWon.cshtml",
+              "RelativeToolTip": "Views\\Game\\GameWon.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-01T23:27:43.415Z",
+              "WhenOpened": "2024-04-21T21:36:17.154Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Grid.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\Views\\Game\\Grid.cshtml",
-              "RelativeDocumentMoniker": "Views\\Game\\Grid.cshtml",
-              "ToolTip": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\Views\\Game\\Grid.cshtml",
-              "RelativeToolTip": "Views\\Game\\Grid.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABsAAAAAAAAA",
+              "DocumentIndex": 8,
+              "Title": "GameOver.cshtml",
+              "DocumentMoniker": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Views\\Game\\GameOver.cshtml",
+              "RelativeDocumentMoniker": "Views\\Game\\GameOver.cshtml",
+              "ToolTip": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Views\\Game\\GameOver.cshtml",
+              "RelativeToolTip": "Views\\Game\\GameOver.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-01T23:01:48.066Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\Views\\Game\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Game\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\Views\\Game\\Index.cshtml",
-              "RelativeToolTip": "Views\\Game\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-30T19:24:36.465Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GameService.cs",
-              "DocumentMoniker": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\Services\\GameService.cs",
-              "RelativeDocumentMoniker": "Services\\GameService.cs",
-              "ToolTip": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\Services\\GameService.cs",
-              "RelativeToolTip": "Services\\GameService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T21:58:25.942Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameController.cs",
-              "DocumentMoniker": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\Controllers\\GameController.cs",
-              "RelativeDocumentMoniker": "Controllers\\GameController.cs",
-              "ToolTip": "C:\\Users\\Jakin\\OneDrive\\Other\\Documents\\GitHub\\Minesweeper-Milestone350\\Controllers\\GameController.cs",
-              "RelativeToolTip": "Controllers\\GameController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAgwE0AAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T17:23:10.643Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-21T21:33:02.28Z"
             }
           ]
         }

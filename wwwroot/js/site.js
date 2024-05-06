@@ -2,6 +2,13 @@
     var buttonElement; // Define buttonElement outside the click event handler
 
     console.log("Page is ready");
+
+    //Function to diasable the right click menu
+    $(document).bind("contextmenu", function (e) {
+        e.preventDefault();
+        console.log("Right click prevented the context menu.");
+    });
+
     // Function to handle the Start Game button click event
     $("#startGameButton").on("click", function () {
         $.ajax({
@@ -22,7 +29,7 @@
     });
 
 
-    $(document).on("click", ".cell-button", function (event) {
+    $(document).on("mousedown", ".cell-button", function (event) {
         var row = $(this).data('row');
         var col = $(this).data('col');
         buttonElement = $(this); // Store a reference to the button element
@@ -32,6 +39,10 @@
         switch (event.which) {
             case 1:
                 event.preventDefault();
+                if ($(this).hasClass('flagged')) {
+                    console.log("This button is flagged");
+                    return;
+                }
                 console.log("Button at row " + row + ", column " + col + " was left clicked");
                 doButtonUpdate(row, col, "/game/HandleButtonClick");
                 break;
@@ -41,7 +52,7 @@
             case 3:
                 event.preventDefault();
                 console.log("Button at row " + row + ", column " + col + " was right clicked");
-                doButtonUpdate(row, col, "/game");
+                doButtonUpdate(row, col, "/game/HandleRightButtonClick");
                 break;
             default:
                 alert('Nothing');
@@ -82,6 +93,13 @@
                         break;
                     case "continue":
                         // Update every button in the button zone
+                        $(".button-zone .cell-button").each(function () {
+                            var row = $(this).data('row');
+                            var col = $(this).data('col');
+                            $(this).load("/Game/UpdatedButton?row=" + row + "&col=" + col + "&mine=");
+                        });
+                        break;
+                    case "flag":
                         $(".button-zone .cell-button").each(function () {
                             var row = $(this).data('row');
                             var col = $(this).data('col');
