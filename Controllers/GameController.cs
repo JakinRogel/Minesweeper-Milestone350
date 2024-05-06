@@ -70,6 +70,15 @@ namespace Minesweeper_Milestone350.Controllers
             return Content(status);
         }
 
+        public IActionResult HandleRightButtonClick(int row, int col)
+        {
+            _gameService.flagBoard(_board, row, col);
+
+            string status = "flag";
+
+            return Content(status);
+        }
+
         // Game over action
         public IActionResult GameOver()
         {
@@ -95,6 +104,15 @@ namespace Minesweeper_Milestone350.Controllers
             
             _board = _gameService.updateBoard(_board, row, col, mine);
 
+
+
+            return PartialView("UpdatedButton", _board.Grid[row, col]);
+        }
+
+        public IActionResult RightClickUpdatedButton(int row, int col, string mine)
+        {
+
+            _board = _gameService.flagBoard(_board, row, col);
 
 
             return PartialView("UpdatedButton", _board.Grid[row, col]);

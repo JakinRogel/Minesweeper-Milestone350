@@ -2,9 +2,16 @@
 
 
 
-<button class="cell-button @(Model.Visited ? "revealed" : "")" @(Model.Visited ? "disabled" : "")>
+<button class="cell-button @(Model.Visited ? "revealed" : "")" @(Model.Visited ? "disabled" : "") @(Model.flagged ? "flagged" : "")" data-row="@Model.Row
+        data-col="@Model.Column">
     <!-- Add content to the button based on cell state -->
-    @if (Model.Visited)
+    @if (Model.flagged)
+    {
+        <span class="mine">
+            <img src="/image/redflag.png" alt="Alternate Text" />
+        </span>
+    }
+    else if (Model.Visited)
     {
         @if (Model.IsMine)
         {
@@ -18,7 +25,7 @@
         }
 
     <!-- Display the current timestamp using JavaScript -->
-    <span class="timestamp">@Model.TimeStamp</span>
+    //<span class="timestamp">@Model.TimeStamp</span>
     }
 </button>
 

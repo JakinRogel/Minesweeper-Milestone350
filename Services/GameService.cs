@@ -223,6 +223,22 @@ namespace Minesweeper_Milestone350.Services
 
             return board;
         }
+
+        internal Board flagBoard(Board board, int row, int col)
+        {
+            if(board.Grid[row, col].flagged)
+            {
+                board.Grid[row, col].flagged = false;
+            } else
+            {
+                board.Grid[row, col].flagged = true;
+            }
+          
+            // Store the new board state in session
+            _httpContextAccessor.HttpContext.Session.SetString("boardState", SerializeBoard(board.Grid));
+
+            return board;
+        }
     }
 }
 
