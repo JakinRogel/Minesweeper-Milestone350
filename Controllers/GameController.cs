@@ -70,20 +70,11 @@ namespace Minesweeper_Milestone350.Controllers
             return Content(status);
         }
 
-        public IActionResult HandleRightButtonClick(int row, int col)
-        {
-            _gameService.flagBoard(_board, row, col);
-
-            string status = "flag";
-
-            return Content(status);
-        }
-
         // Game over action
         public IActionResult GameOver()
         {
             // Reset the game by clearing the session and initializing a new board
-            _httpContextAccessor.HttpContext.Session.Clear();
+            _gameService.clearBoard();
             InitializeBoard();
 
             return PartialView("GameOver");
@@ -93,7 +84,7 @@ namespace Minesweeper_Milestone350.Controllers
         public IActionResult GameWon()
         {
             // Reset the game by clearing the session and initializing a new board
-            _httpContextAccessor.HttpContext.Session.Clear();
+            _gameService.clearBoard();
             InitializeBoard();
 
             return PartialView("GameWon");
@@ -109,16 +100,26 @@ namespace Minesweeper_Milestone350.Controllers
             return PartialView("UpdatedButton", _board.Grid[row, col]);
         }
 
-        public IActionResult RightClickUpdatedButton(int row, int col, string mine)
+        public IActionResult SaveGame()
         {
+            _gameService.SaveGame();
 
-            _board = _gameService.flagBoard(_board, row, col);
-
-
-            return PartialView("UpdatedButton", _board.Grid[row, col]);
+            return Content("Save Game Successful");
         }
 
+        public IActionResult LoadGame()
+        {
+            List<string> savedGames = _gameService.LoadGame();
 
+            return View("LoadGame", savedGames);
+        }
 
+        public IActionResult LoadSelectedGame(string savedGame)
+        {
+
+            _gameService.LoadSelectedGame(savedGame);
+
+            return RedirectToAction("Index");
+        }
     }
 }

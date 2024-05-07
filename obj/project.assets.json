@@ -6965,19 +6965,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\migue\\.nuget\\packages\\": {}
+    "C:\\Users\\Jakin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Minesweeper-Milestone350.csproj",
+      "projectUniqueName": "C:\\Users\\Jakin\\OneDrive\\Desktop\\Minesweeper-Milestone350\\Minesweeper-Milestone350.csproj",
       "projectName": "Minesweeper-Milestone350",
-      "projectPath": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\Minesweeper-Milestone350.csproj",
-      "packagesPath": "C:\\Users\\migue\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\migue\\Documents\\GitHub\\Minesweeper-Milestone350\\obj\\",
+      "projectPath": "C:\\Users\\Jakin\\OneDrive\\Desktop\\Minesweeper-Milestone350\\Minesweeper-Milestone350.csproj",
+      "packagesPath": "C:\\Users\\Jakin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jakin\\OneDrive\\Desktop\\Minesweeper-Milestone350\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\migue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jakin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

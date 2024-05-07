@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Minesweeper_Milestone350.Services;
+using RegisterAndLoginApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.AccessDeniedPath = "/AccessDenied";
 
     });
+
+// Register the SecurityDAO class
+builder.Services.AddScoped<SecurityDAO>();
 
 // Register the GameService class
 builder.Services.AddScoped<GameService>();

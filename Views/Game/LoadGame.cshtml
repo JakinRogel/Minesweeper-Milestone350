@@ -1,0 +1,42 @@
+﻿@model List<string>
+
+@{
+    ViewData["Title"] = "Load Game";
+}
+
+<h1>Load Game</h1>
+
+@if (Model != null && Model.Any())
+{
+    <ul>
+        @foreach (var gameEntry in Model)
+        {
+            // Find the index of "Username: "
+            int usernameIndex = gameEntry.IndexOf("Username: ") + "Username: ".Length;
+            int commaAfterUsernameIndex = gameEntry.IndexOf(',', usernameIndex);
+            // Extract the username
+            string username = gameEntry.Substring(usernameIndex, commaAfterUsernameIndex - usernameIndex);
+
+            // Find the index of "Time Saved: "
+            int timestampIndex = gameEntry.IndexOf("Time Saved: ") + "Time Saved: ".Length;
+            int commaAfterTimestampIndex = gameEntry.IndexOf(',', timestampIndex);
+            // Extract the timestamp
+            string timestamp = gameEntry.Substring(timestampIndex, commaAfterTimestampIndex - timestampIndex);
+            
+            <br />
+            <li>
+                <form method="post" asp-action="LoadSelectedGame">
+                    <input type="hidden" name="savedGame" value="@gameEntry" />
+                    <!-- Display the username and timestamp in the button text -->
+                    <button type="submit">@username - @timestamp</button>
+                </form>
+            </li>
+            <br />
+            <br />
+        }
+    </ul>
+}
+else
+{
+    <p>No saved games found.</p>
+}

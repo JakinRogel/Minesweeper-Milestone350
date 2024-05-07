@@ -1,4 +1,5 @@
 ﻿using Minesweeper_Milestone350.Models;
+using RegisterAndLoginApp.Services;
 using System;
 using System.Linq;
 using System.Text.Json;
@@ -8,10 +9,12 @@ namespace Minesweeper_Milestone350.Services
     public class GameService
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private SecurityDAO _securityDAO;
 
-        public GameService(IHttpContextAccessor httpContextAccessor)
+        public GameService(IHttpContextAccessor httpContextAccessor, SecurityDAO securityDAO)
         {
             _httpContextAccessor = httpContextAccessor;
+            _securityDAO = securityDAO;
         }
 
         public Board InitializeBoard()
@@ -224,20 +227,37 @@ namespace Minesweeper_Milestone350.Services
             return board;
         }
 
-        internal Board flagBoard(Board board, int row, int col)
+        internal void SaveGame()
         {
-            if(board.Grid[row, col].flagged)
-            {
-                board.Grid[row, col].flagged = false;
-            } else
-            {
-                board.Grid[row, col].flagged = true;
-            }
-          
-            // Store the new board state in session
-            _httpContextAccessor.HttpContext.Session.SetString("boardState", SerializeBoard(board.Grid));
+            var userName = _httpContextAccessor.HttpContext.User.Identity.Name;
+            // Get the current time
+            var currentTime = DateTime.Now;
+            _securityDAO.SaveSerializedBoard("Username: " + userName + ", " + "Time Saved: " + currentTime + ", " + _httpContextAccessor.HttpContext.Session.GetString("boardState"));
+        }
 
-            return board;
+        internal List<string> LoadGame()
+        {
+           List<string> savedGames = _securityDAO.GetSavedGames();
+
+
+            return savedGames;
+        }
+
+        internal void clearBoard()
+        {
+            _httpContextAccessor.HttpContext.Session.Clear();
+
+        }
+
+        internal void LoadSelectedGame(string savedGame)
+        {
+            // Find the index of the opening square bracket
+            int index = savedGame.IndexOf('[');
+
+            // Extract the substring from the opening square bracket to the end of the string
+            savedGame = savedGame.Substring(index);
+
+            _httpContextAccessor.HttpContext.Session.SetString("boardState", savedGame);
         }
     }
 }
