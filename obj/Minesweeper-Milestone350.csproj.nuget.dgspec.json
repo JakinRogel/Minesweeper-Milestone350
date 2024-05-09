@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jakin\\OneDrive\\Desktop\\Minesweeper-Milestone350\\Minesweeper-Milestone350.csproj": {}
+    "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Minesweeper-Milestone350.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jakin\\OneDrive\\Desktop\\Minesweeper-Milestone350\\Minesweeper-Milestone350.csproj": {
+    "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Minesweeper-Milestone350.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jakin\\OneDrive\\Desktop\\Minesweeper-Milestone350\\Minesweeper-Milestone350.csproj",
+        "projectUniqueName": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Minesweeper-Milestone350.csproj",
         "projectName": "Minesweeper-Milestone350",
-        "projectPath": "C:\\Users\\Jakin\\OneDrive\\Desktop\\Minesweeper-Milestone350\\Minesweeper-Milestone350.csproj",
-        "packagesPath": "C:\\Users\\Jakin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jakin\\OneDrive\\Desktop\\Minesweeper-Milestone350\\obj\\",
+        "projectPath": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\Minesweeper-Milestone350.csproj",
+        "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tony\\Desktop\\CLC Project\\Minesweeper-Milestone350\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jakin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -77,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

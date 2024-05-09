@@ -121,5 +121,6 @@ namespace Minesweeper_Milestone350.Controllers
 
             return RedirectToAction("Index");
         }
+
     }
 }
