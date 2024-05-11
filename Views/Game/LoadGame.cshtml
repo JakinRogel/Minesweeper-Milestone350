@@ -1,0 +1,81 @@
+﻿@model List<string>
+
+@{
+    ViewData["Title"] = "Load Game";
+}
+<style>
+    /* Style for the body */
+    body {
+        background-color: lightgray; /* Set your desired background color */
+    }
+    /* Style for the heading */
+    h1 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    /* Style for the list of saved games */
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    /* Style for each saved game entry */
+    li {
+        margin-bottom: -30px;
+    }
+
+    /* Style for the button */
+    button {
+        background-color: green;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    /* Hover effect for the button */
+    button:hover {
+        background-color: forestgreen;
+    }
+</style>
+
+<h1>Load Game</h1>
+
+@if (Model != null && Model.Any())
+{
+    <ul>
+        @foreach (var gameEntry in Model)
+        {
+            // Find the index of "Username: "
+            int usernameIndex = gameEntry.IndexOf("Username: ") + "Username: ".Length;
+            int commaAfterUsernameIndex = gameEntry.IndexOf(',', usernameIndex);
+            // Extract the username
+            string username = gameEntry.Substring(usernameIndex, commaAfterUsernameIndex - usernameIndex);
+
+            // Find the index of "Time Saved: "
+            int timestampIndex = gameEntry.IndexOf("Time Saved: ") + "Time Saved: ".Length;
+            int commaAfterTimestampIndex = gameEntry.IndexOf(',', timestampIndex);
+            // Extract the timestamp
+            string timestamp = gameEntry.Substring(timestampIndex, commaAfterTimestampIndex - timestampIndex);
+            
+            <br />
+            <li>
+                <form method="post" asp-action="LoadSelectedGame">
+                    <input type="hidden" name="savedGame" value="@gameEntry" />
+                    <!-- Display the username and timestamp in the button text -->
+                    <button type="submit">@username - @timestamp</button>
+                </form>
+            </li>
+            <br />
+            <br />
+        }
+    </ul>
+}
+else
+{
+    <p>No saved games found.</p>
+}

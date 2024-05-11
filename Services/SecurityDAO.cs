@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Minesweeper_Milestone350.Models;
+using System.Text;
 
 
 namespace RegisterAndLoginApp.Services
@@ -104,40 +105,97 @@ namespace RegisterAndLoginApp.Services
             return existingUser;
         }
 
-
-        /* TONY ITERATION
-        public bool FindUserByUsername(string username)
+        // Method to save serialized game board to the database
+        public void SaveSerializedBoard(string serializedBoard)
         {
-            bool existingUser = false;
-
-            string sqlStatement = "SELECT * FROM dbo.users WHERE username = @username";
+            string sqlStatement = "INSERT INTO GameBoards (SerializedBoard) VALUES (@SerializedBoard)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(sqlStatement, connection);
-                command.Parameters.AddWithValue("@USERNAME", username);
+                command.Parameters.AddWithValue("@SerializedBoard", serializedBoard);
 
                 try
                 {
                     connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    // If the reader has rows, it means a user with the provided username already exists
-                    if (reader.HasRows)
-                    {
-                        existingUser = true;
-                    }
+                    command.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
+                    // Handle the exception appropriately, e.g., log it
+                }
+            }
+        }
+
+        // Method to retrieve the serialized game board from the database
+        public string GetSerializedBoard(int boardId)
+        {
+            string serializedBoard = null;
+
+            string sqlStatement = "SELECT SerializedBoard FROM GameBoards WHERE Id = @BoardId";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(sqlStatement, connection);
+                command.Parameters.AddWithValue("@BoardId", boardId);
+
+                try
+                {
+                    connection.Open();
+                    serializedBoard = (string)command.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    // Handle the exception appropriately, e.g., log it
                 }
             }
 
-            return existingUser;
+            return serializedBoard;
         }
 
-        */
+
+        // Method to return a list of strings, each representing a saved game data entry
+        public List<string> GetSavedGames()
+        {
+            List<string> savedGamesList = new List<string>();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sqlQuery = "SELECT * FROM GameBoards"; // Adjust the query according to your table structure
+
+                    using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                    {
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            StringBuilder gameEntryBuilder = new StringBuilder();
+
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                gameEntryBuilder.Append(reader[i].ToString());
+                                gameEntryBuilder.Append(", "); // Add a separator between fields
+                            }
+
+                            // Add the constructed game entry string to the list
+                            savedGamesList.Add(gameEntryBuilder.ToString().TrimEnd(',', ' '));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while retrieving saved games: " + ex.Message);
+                // Handle the exception appropriately, e.g., log it
+            }
+
+            return savedGamesList;
+        }
 
     }
 }
