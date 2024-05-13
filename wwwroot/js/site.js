@@ -5,7 +5,28 @@
     // Function to handle the Start Game button click event
     $(".deleteButton").on("click", function (e) {
         e.preventDefault();
-        console.log(e)
+        let firstIndex = e.target.ariaValueText.indexOf(',');
+        const gameId = parseInt(e.target.ariaValueText.substring(0, firstIndex));
+        if (isNaN(gameId)) {
+            alert("Something went wrong");
+            return;
+        }
+        console.log({ gameId });
+        $.ajax({
+            type: "POST",
+            url: "/Game/DeleteGame", 
+            data: {
+                id: gameId
+            },
+            success: function (data) {
+                alert(`Game board number ${gameId} deleted successfully`);
+                window.location.href = '/game/loadgame';
+            },
+            error: function (xhr, status, error) {
+                // Handle errors if needed
+                console.error("Error deleting game:", error);
+            }
+        });
     });
 
     $("#startGameButton").on("click", function () {

@@ -197,5 +197,29 @@ namespace RegisterAndLoginApp.Services
             return savedGamesList;
         }
 
+        public void DeleteGameBoard(int gameId)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sqlQuery = "DELETE FROM GameBoards WHERE Id = @Id";
+
+                    using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", gameId);
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+                        Console.WriteLine($"{rowsAffected} row(s) deleted.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while deleting the game board: " + ex.Message);
+                // Handle the exception appropriately, e.g., log it
+            }
+        }
+
     }
 }
