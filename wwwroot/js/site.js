@@ -3,6 +3,11 @@
 
     console.log("Page is ready");
     // Function to handle the Start Game button click event
+    $(".deleteButton").on("click", function (e) {
+        e.preventDefault();
+        console.log(e)
+    });
+
     $("#startGameButton").on("click", function () {
         $.ajax({
             type: "POST",
