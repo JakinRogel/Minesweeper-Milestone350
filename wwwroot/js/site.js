@@ -19,6 +19,7 @@
                 id: gameId
             },
             success: function (data) {
+                alert(`Game board number ${gameId} deleted successfully`);
                 window.location.href = '/game/loadgame';
             },
             error: function (xhr, status, error) {
