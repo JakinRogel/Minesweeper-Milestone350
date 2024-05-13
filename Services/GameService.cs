@@ -235,6 +235,11 @@ namespace Minesweeper_Milestone350.Services
             _securityDAO.SaveSerializedBoard("Username: " + userName + ", " + "Time Saved: " + currentTime + ", " + _httpContextAccessor.HttpContext.Session.GetString("boardState"));
         }
 
+        internal void deleteGame(int id)
+        {
+            _securityDAO.DeleteGameBoard(id);
+        }
+
         internal List<string> LoadGame()
         {
            List<string> savedGames = _securityDAO.GetSavedGames();

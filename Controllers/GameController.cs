@@ -107,6 +107,13 @@ namespace Minesweeper_Milestone350.Controllers
             return Content("Save Game Successful");
         }
 
+        public IActionResult DeleteGame(int id)
+        {
+            _gameService.deleteGame(id);
+
+            return Content("Game Delete Successful");
+        }
+
         public IActionResult LoadGame()
         {
             List<string> savedGames = _gameService.LoadGame();
