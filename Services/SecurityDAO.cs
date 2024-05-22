@@ -2,30 +2,27 @@
 using Minesweeper_Milestone350.Models;
 using System.Text;
 
-
 namespace RegisterAndLoginApp.Services
 {
     public class SecurityDAO
     {
-
+        // Connection string for connecting to the SQL database
         string connectionString = @"Server=tcp:milestoneserver.database.windows.net,1433;Initial Catalog=milestone;Persist Security Info=False;User ID=Jakin;Password=rootroot1!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;";
 
-
-
-
+        // Method to find a user by username and password
         public bool FindUserByNameAndPassword(UserLoginModel user)
         {
-            //assume nothing is found
+            // Assume no user is found
             bool success = false;
 
-            //uses prepared statements for security. @username @password are defined below
+            // SQL statement to find the user by username and password
             string sqlStatement = "SELECT * FROM dbo.users WHERE username = @username and password = @password";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(sqlStatement, connection);
 
-                //define the values of the two placeholders in the sqlStatement string
+                // Define the values of the placeholders in the SQL statement
                 command.Parameters.Add("@USERNAME", System.Data.SqlDbType.VarChar, 50).Value = user.UserName;
                 command.Parameters.Add("@PASSWORD", System.Data.SqlDbType.VarChar, 50).Value = user.Password;
 
@@ -34,6 +31,7 @@ namespace RegisterAndLoginApp.Services
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
 
+                    // If any rows are returned, the user was found
                     if (reader.HasRows)
                     {
                         success = true;
@@ -41,15 +39,16 @@ namespace RegisterAndLoginApp.Services
                 }
                 catch (Exception ex)
                 {
-
                     Console.WriteLine(ex.Message);
-                };
+                }
             }
             return success;
         }
 
+        // Method to create a new user in the database
         public void CreateUser(UserRegistrationModel user)
         {
+            // SQL statement to insert a new user
             string sqlStatement = "INSERT INTO dbo.users (USERNAME, PASSWORD, FIRSTNAME, LASTNAME, GENDER, USERAGE, STATE, EMAILADDRESS) " +
                                  "VALUES (@USERNAME, @PASSWORD, @FIRSTNAME, @LASTNAME, @GENDER, @USERAGE, @STATE, @EMAILADDRESS)";
 
@@ -57,6 +56,7 @@ namespace RegisterAndLoginApp.Services
             {
                 SqlCommand command = new SqlCommand(sqlStatement, connection);
 
+                // Define the values of the placeholders in the SQL statement
                 command.Parameters.AddWithValue("@USERNAME", user.userName);
                 command.Parameters.AddWithValue("@PASSWORD", user.password);
                 command.Parameters.AddWithValue("@FIRSTNAME", user.firstName);
@@ -77,11 +77,13 @@ namespace RegisterAndLoginApp.Services
                 }
             }
         }
-        // attempting to get search for exsisting user based off database search
+
+        // Method to check if a user exists by username
         public bool FindUserByUsername(string username)
         {
             bool existingUser = false;
 
+            // SQL statement to count users with the specified username
             string sqlStatement = "SELECT COUNT(*) FROM dbo.users WHERE username = @username";
 
             try
@@ -105,9 +107,10 @@ namespace RegisterAndLoginApp.Services
             return existingUser;
         }
 
-        // Method to save serialized game board to the database
+        // Method to save a serialized game board to the database
         public void SaveSerializedBoard(string serializedBoard)
         {
+            // SQL statement to insert the serialized game board
             string sqlStatement = "INSERT INTO GameBoards (SerializedBoard) VALUES (@SerializedBoard)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -128,11 +131,12 @@ namespace RegisterAndLoginApp.Services
             }
         }
 
-        // Method to retrieve the serialized game board from the database
+        // Method to retrieve a serialized game board from the database by board ID
         public string GetSerializedBoard(int boardId)
         {
             string serializedBoard = null;
 
+            // SQL statement to select the serialized board by ID
             string sqlStatement = "SELECT SerializedBoard FROM GameBoards WHERE Id = @BoardId";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -155,7 +159,6 @@ namespace RegisterAndLoginApp.Services
             return serializedBoard;
         }
 
-
         // Method to return a list of strings, each representing a saved game data entry
         public List<string> GetSavedGames()
         {
@@ -165,6 +168,7 @@ namespace RegisterAndLoginApp.Services
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+                    // SQL query to select all saved game entries
                     string sqlQuery = "SELECT * FROM GameBoards"; // Adjust the query according to your table structure
 
                     using (SqlCommand command = new SqlCommand(sqlQuery, connection))
@@ -197,12 +201,14 @@ namespace RegisterAndLoginApp.Services
             return savedGamesList;
         }
 
+        // Method to delete a game board from the database by game ID
         public void DeleteGameBoard(int gameId)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+                    // SQL query to delete the game board by ID
                     string sqlQuery = "DELETE FROM GameBoards WHERE Id = @Id";
 
                     using (SqlCommand command = new SqlCommand(sqlQuery, connection))
@@ -220,6 +226,6 @@ namespace RegisterAndLoginApp.Services
                 // Handle the exception appropriately, e.g., log it
             }
         }
-
     }
 }
+

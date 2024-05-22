@@ -10,47 +10,50 @@ namespace Minesweeper_Milestone350.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly SecurityDAO securityDAO;
 
+        // Constructor to initialize the logger and SecurityDAO
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
             securityDAO = new SecurityDAO();
         }
 
+        // Action method to display the home page
         public IActionResult Index()
         {
             return View();
         }
 
+        // Action method to display the privacy page
         public IActionResult Privacy()
         {
             return View();
         }
 
-        [HttpGet] 
+        // Action method to display the registration page
+        [HttpGet]
         public IActionResult RegistrationPage()
         {
             return View();
         }
 
+        // Action method to create a new user based on the registration form submission
         [HttpPost]
         public IActionResult CreateUser(UserRegistrationModel model)
         {
             // Check if the user already exists by username
-            //if(model.userName == "existingUser")
             if (securityDAO.FindUserByUsername(model.userName))
             {
                 ModelState.AddModelError(string.Empty, "User already exists.");
                 return View("ExistingUser", model);
             }
 
+            // Check if the model state is valid
             if (ModelState.IsValid)
             {
-                // Here, you can process the registration logic
-                // For example, save the user to a database
                 // Call the CreateUser method in SecurityDAO to save the user to the database
                 securityDAO.CreateUser(model);
 
-                // For demonstration, let's just return a success message
+                // Return a view displaying the user details
                 return View("ShowUserDetails", model);
             }
             else
@@ -60,7 +63,7 @@ namespace Minesweeper_Milestone350.Controllers
             }
         }
 
-
+        // Action method to handle errors
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
