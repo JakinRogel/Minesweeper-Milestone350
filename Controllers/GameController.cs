@@ -15,11 +15,14 @@ namespace Minesweeper_Milestone350.Controllers
         private readonly GameService _gameService;
         private Board _board;
 
+        private readonly IRulesInterface _rulesRepository;
+
         // Constructor to initialize the GameController with HTTP context accessor and game service
-        public GameController(IHttpContextAccessor httpContextAccessor, GameService gameService)
+        public GameController(IHttpContextAccessor httpContextAccessor, GameService gameService, IRulesInterface ruleService)
         {
             _httpContextAccessor = httpContextAccessor;
             _gameService = gameService;
+            _rulesRepository = ruleService;
             InitializeBoard();
         }
 
@@ -33,7 +36,8 @@ namespace Minesweeper_Milestone350.Controllers
         // Method to render the main game view
         public IActionResult Index()
         {
-            return View();
+            List<string> gameRules = _rulesRepository.GetAllRules();
+            return View(gameRules);
         }
 
         // POST: /Game/StartGame
