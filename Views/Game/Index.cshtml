@@ -1,4 +1,4 @@
-﻿@model Minesweeper_Milestone350.Models.Cell[,]
+﻿@model List<string>
 
 <style>
     .cell-button {
@@ -61,3 +61,11 @@
 <button id="savegame">Save Game</button>
 <div id="gameOverOrWonContainer" class="gameInfo"></div>
 <div class="button-zone"></div>
+<div class="game-rules">
+    <ul>
+        @foreach (var rule in Model)
+        {
+            <li>@rule</li>
+        }
+    </ul>
+</div>

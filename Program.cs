@@ -19,6 +19,8 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
     });
 
+builder.Services.AddTransient<IRulesInterface, HardCodedRulesRepository>();
+
 // Register the SecurityDAO class
 builder.Services.AddScoped<SecurityDAO>();
 
